@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import html2canvas from 'html2canvas'; // <--- ADD THIS
 
 // Configuration: Backend fallback URL
 const BACKEND_URL = "[https://validn-backend.onrender.com](https://validn-backend.onrender.com)"; //valinn-clinical-suite.onrender.com";
@@ -301,7 +302,7 @@ report = `The sample size was calculated to evaluate the descriptive prevalence 
       report += `Finally, to buffer against an expected ${(100 - responseRate)}% clinical attrition or non-response rate, the required target was inflated. `;
     }
 
-    let total_n = current_n if numGroups === 1 else current_n * numGroups;
+    let total_n = (numGroups === 1) ? current_n : (current_n * numGroups);
     report += `Therefore, the final target sample size for this study is ${total_n} ` + (numGroups === 1 ? `participants.` : `(${current_n} per group).`);
 
     return {
