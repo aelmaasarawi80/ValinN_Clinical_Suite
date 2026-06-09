@@ -185,7 +185,8 @@ export default function App() {
       const d = ciWidth;
       const zAlpha = normSInvLocal(1 - alphaVal / 2);
       n_per_group = Math.ceil((Math.pow(zAlpha, 2) * p * (1 - p)) / Math.pow(d, 2));
-      report = `The sample size was calculated to evaluate the descriptive prevalence of ${primaryOutcome} in ${groupNames[0]}. To achieve a ±${(d * 100).toFixed(0)}% margin of error with ${(confidenceLevel * 100).toFixed(0)}% confidence, assuming expected prevalence of ${prevProp}%${doiCitation} (Cochran, 1977), the baseline calculation required ${n_per_group} total samples.`;
+      // REPLACE LINE 188 WITH THIS:
+report = `The sample size was calculated to evaluate the descriptive prevalence of ${primaryOutcome} in ${groupNames[0]}. To achieve a ±${(d * 100).toFixed(0)}% margin of error with ${(confidenceLevel * 100).toFixed(0)}% confidence, assuming expected prevalence of ${prevProp}%${doiCitation} (Cochran, 1977), the baseline calculation required ${n_per_group} total samples.`;
     } else {
       if (dataSource === "none") {
         let eff = parseFloat(cohenEffect);
