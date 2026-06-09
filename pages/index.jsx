@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 // Configuration: Backend fallback URL
-const BACKEND_URL = "http://localhost:8000";
+const BACKEND_URL = "[https://validn-backend.onrender.com](https://validn-backend.onrender.com)"; //valinn-clinical-suite.onrender.com";
 
 export default function App() {
   const [currentStep, setCurrentStep] = useState(1);
